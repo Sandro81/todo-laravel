@@ -84,12 +84,12 @@ class TodosController extends Controller
 //        $userTodoIds = auth()->user()->todos->map(function ($todo) {
 //            return $todo->id;
 //        });
-        $valid = collect($todosToDelete)->every(function ($value, $key) use ($userTodoIds) {
-            return $userTodoIds->contains($value);
-        });
-        if (!$valid) {
-            return response()->json('Unauthorized', 401);
-        }
+//        $valid = collect($todosToDelete)->every(function ($value, $key) use ($userTodoIds) {
+//            return $userTodoIds->contains($value);
+//        });
+//        if (!$valid) {
+//            return response()->json('Unauthorized', 401);
+//        }
         $request->validate([
             'todos' => 'required|array',
         ]);
