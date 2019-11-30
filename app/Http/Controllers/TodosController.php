@@ -81,9 +81,9 @@ class TodosController extends Controller
         // [6,9] todo ids we are passing in and want to delete
         // [5,6,9] all of the users todo ids
         $todosToDelete = $request->todos;
-        $userTodoIds = auth()->user()->todos->map(function ($todo) {
-            return $todo->id;
-        });
+//        $userTodoIds = auth()->user()->todos->map(function ($todo) {
+//            return $todo->id;
+//        });
         $valid = collect($todosToDelete)->every(function ($value, $key) use ($userTodoIds) {
             return $userTodoIds->contains($value);
         });
