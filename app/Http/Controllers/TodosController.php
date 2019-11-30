@@ -59,7 +59,7 @@ class TodosController extends Controller
         $data = $request->validate([
             'completed' => 'required|boolean',
         ]);
-        Todo::where('user_id', auth()->user()->id)->update($data);
+       // Todo::where('user_id', auth()->user()->id)->update($data);
         return response()->json('Updated', 200);
     }
     /**
